@@ -7,13 +7,13 @@ app.on('ready', () => {
   win = new BrowserWindow({
     width: 600,
     height: 600,
-    webPreference: {
+    webPreferences: {
       nodeIntegration: true,
     }
   });
   if(isDev){
     win.loadURL('http://localhost:3000');
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
   } else {
     // TO-DO 第三章
     win.loadFile(path.resolve(__dirname, '../renderer/pages/main/index.html'))
